@@ -29,7 +29,7 @@ namespace GuessMelody
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
