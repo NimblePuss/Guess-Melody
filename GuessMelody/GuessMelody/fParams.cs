@@ -16,5 +16,22 @@ namespace GuessMelody
         {
             InitializeComponent();
         }
+
+
+
+        private void button_OK_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Cancel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_selectFolder_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
