@@ -101,6 +101,14 @@
             // comboBox_timeForAnswer
             // 
             this.comboBox_timeForAnswer.FormattingEnabled = true;
+            this.comboBox_timeForAnswer.Items.AddRange(new object[] {
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
             this.comboBox_timeForAnswer.Location = new System.Drawing.Point(149, 146);
             this.comboBox_timeForAnswer.Name = "comboBox_timeForAnswer";
             this.comboBox_timeForAnswer.Size = new System.Drawing.Size(99, 24);
@@ -109,6 +117,13 @@
             // comboBox_musicDuration
             // 
             this.comboBox_musicDuration.FormattingEnabled = true;
+            this.comboBox_musicDuration.Items.AddRange(new object[] {
+            "5",
+            "7",
+            "9",
+            "11",
+            "13",
+            "15"});
             this.comboBox_musicDuration.Location = new System.Drawing.Point(149, 102);
             this.comboBox_musicDuration.Name = "comboBox_musicDuration";
             this.comboBox_musicDuration.Size = new System.Drawing.Size(99, 24);
@@ -117,6 +132,12 @@
             // comboBox_gameDuration
             // 
             this.comboBox_gameDuration.FormattingEnabled = true;
+            this.comboBox_gameDuration.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "30",
+            "40",
+            "50"});
             this.comboBox_gameDuration.Location = new System.Drawing.Point(149, 57);
             this.comboBox_gameDuration.Name = "comboBox_gameDuration";
             this.comboBox_gameDuration.Size = new System.Drawing.Size(99, 24);
@@ -171,6 +192,7 @@
             this.Controls.Add(this.listBox_music);
             this.Name = "fParams";
             this.Text = "fParams";
+            this.Load += new System.EventHandler(this.fParams_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
