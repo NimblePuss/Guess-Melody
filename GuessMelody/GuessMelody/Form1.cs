@@ -13,16 +13,18 @@ namespace GuessMelody
     public partial class Form1 : Form
     {
         private fParams fp;
+        private fGame fg;
         
         public Form1()
         {
             InitializeComponent();
             fp = new fParams();
+            fg = new fGame();
         }
 
         private void button_Game_Click(object sender, EventArgs e)
         {
-
+            fg.ShowDialog();
         }
 
         private void button_Settings_Click(object sender, EventArgs e)
