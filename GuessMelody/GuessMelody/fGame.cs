@@ -41,23 +41,29 @@ namespace GuessMelody
         void GamePause()
         {
             timer.Stop();
-            WMP.CtlControls.stop();
+            WMP.Ctlcontrols.stop();
         }
 
         void GamePlay()
         {
             timer.Start();
-            WMP.CtlControls.play();
+            WMP.Ctlcontrols.play();
         }
 
         void EndGame()
         {
-            WMP.CtlControls.stop();
+            WMP.Ctlcontrols.stop();
             timer.Stop();
+            button_start.Enabled = false;
+            button_nextMelody.Enabled = false;
+            button_continue.Enabled = false;
+            button_pause.Enabled = false;
+            progressBar.Value = progressBar.Maximum;
         }
 
         private void button_nextMelody_Click(object sender, EventArgs e)
         {
+
             MakeMusic();
             timer.Start();
         }
@@ -87,9 +93,9 @@ namespace GuessMelody
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            progressBar.Value++;
-            musicDuration--;
 
+            musicDuration--;
+            label_durationMelody.Text = musicDuration.ToString();
             if (progressBar.Value == progressBar.Maximum)
             {
                 EndGame();
@@ -99,9 +105,12 @@ namespace GuessMelody
             {
                 MakeMusic();
             }
+            progressBar.Value++;
+            
         }
 
-        private void fGame_KeyDown(object sender, KeyEventArgs e) // когда на клавеатуре нажимаем на любую кнопку, при этом окно программы должно быть активным
+        // когда на клавеатуре нажимаем на любую кнопку, при этом окно программы должно быть активным
+        private void fGame_KeyDown(object sender, KeyEventArgs e) 
         {
             if (e.KeyData == Keys.A)
             {
@@ -136,6 +145,15 @@ namespace GuessMelody
                 }
                 GamePlay();
             }
+        }
+
+        private void button_start_Click(object sender, EventArgs e)
+        {
+            button_nextMelody.Enabled = true;
+            MakeMusic();
+            timer.Start();
+            button_start.Enabled = false;
+            label_durationMelody.Text = Victorina.musicDuration.ToString();
         }
     }
 }

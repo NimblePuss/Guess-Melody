@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGame));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.button_nextMelody = new System.Windows.Forms.Button();
             this.button_pause = new System.Windows.Forms.Button();
@@ -39,15 +40,23 @@
             this.label_firstPlayer = new System.Windows.Forms.Label();
             this.label_melodyCounter = new System.Windows.Forms.Label();
             this.label_secondPlayer = new System.Windows.Forms.Label();
+            this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button_start = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label_durationMelody = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
             // 
+            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // button_nextMelody
             // 
-            this.button_nextMelody.Location = new System.Drawing.Point(151, 204);
+            this.button_nextMelody.Enabled = false;
+            this.button_nextMelody.Location = new System.Drawing.Point(229, 214);
             this.button_nextMelody.Name = "button_nextMelody";
             this.button_nextMelody.Size = new System.Drawing.Size(137, 48);
             this.button_nextMelody.TabIndex = 0;
@@ -127,11 +136,63 @@
             this.label_secondPlayer.TabIndex = 8;
             this.label_secondPlayer.Text = "0";
             // 
+            // WMP
+            // 
+            this.WMP.Enabled = true;
+            this.WMP.Location = new System.Drawing.Point(21, 151);
+            this.WMP.Name = "WMP";
+            this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
+            this.WMP.Size = new System.Drawing.Size(37, 47);
+            this.WMP.TabIndex = 9;
+            this.WMP.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(249, 248);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(8, 8);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button_start
+            // 
+            this.button_start.Location = new System.Drawing.Point(51, 214);
+            this.button_start.Name = "button_start";
+            this.button_start.Size = new System.Drawing.Size(137, 48);
+            this.button_start.TabIndex = 11;
+            this.button_start.Text = "Start";
+            this.button_start.UseVisualStyleBackColor = true;
+            this.button_start.Click += new System.EventHandler(this.button_start_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(130, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Duration Melody:";
+            // 
+            // label_durationMelody
+            // 
+            this.label_durationMelody.AutoSize = true;
+            this.label_durationMelody.Location = new System.Drawing.Point(253, 151);
+            this.label_durationMelody.Name = "label_durationMelody";
+            this.label_durationMelody.Size = new System.Drawing.Size(16, 17);
+            this.label_durationMelody.TabIndex = 13;
+            this.label_durationMelody.Text = "0";
+            // 
             // fGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 423);
+            this.Controls.Add(this.label_durationMelody);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_start);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.WMP);
             this.Controls.Add(this.label_secondPlayer);
             this.Controls.Add(this.label_melodyCounter);
             this.Controls.Add(this.label_firstPlayer);
@@ -141,11 +202,13 @@
             this.Controls.Add(this.button_continue);
             this.Controls.Add(this.button_pause);
             this.Controls.Add(this.button_nextMelody);
+            this.KeyPreview = true;
             this.Name = "fGame";
             this.Text = "fGame";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
             this.Load += new System.EventHandler(this.fGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fGame_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.WMP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +226,10 @@
         private System.Windows.Forms.Label label_firstPlayer;
         private System.Windows.Forms.Label label_melodyCounter;
         private System.Windows.Forms.Label label_secondPlayer;
+        private AxWMPLib.AxWindowsMediaPlayer WMP;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_start;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_durationMelody;
     }
 }
