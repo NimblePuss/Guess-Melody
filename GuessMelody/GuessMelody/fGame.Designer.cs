@@ -41,6 +41,10 @@
             this.label_secondPlayer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // button_nextMelody
             // 
             this.button_nextMelody.Location = new System.Drawing.Point(151, 204);
@@ -49,6 +53,7 @@
             this.button_nextMelody.TabIndex = 0;
             this.button_nextMelody.Text = "Next";
             this.button_nextMelody.UseVisualStyleBackColor = true;
+            this.button_nextMelody.Click += new System.EventHandler(this.button_nextMelody_Click);
             // 
             // button_pause
             // 
@@ -58,6 +63,7 @@
             this.button_pause.TabIndex = 1;
             this.button_pause.Text = "Pause";
             this.button_pause.UseVisualStyleBackColor = true;
+            this.button_pause.Click += new System.EventHandler(this.button_pause_Click);
             // 
             // button_continue
             // 
@@ -67,6 +73,7 @@
             this.button_continue.TabIndex = 2;
             this.button_continue.Text = "Continue";
             this.button_continue.UseVisualStyleBackColor = true;
+            this.button_continue.Click += new System.EventHandler(this.button_continue_Click);
             // 
             // progressBar
             // 
@@ -136,6 +143,9 @@
             this.Controls.Add(this.button_nextMelody);
             this.Name = "fGame";
             this.Text = "fGame";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGame_FormClosed);
+            this.Load += new System.EventHandler(this.fGame_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fGame_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
