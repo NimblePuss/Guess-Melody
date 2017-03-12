@@ -129,7 +129,7 @@ namespace GuessMelody
                 GamePause();
                 fMessage fm = new fMessage();
                 fm.label_player.Text = "Player 2";
-                if (fm.ShowDialog() == DialogResult.Yes)
+                if (fm.ShowDialog() == DialogResult.Yes) // инкрементируем счетчик очков у данного игрока
                 {
                     label_secondPlayer.Text = Convert.ToString(Convert.ToInt32(label_secondPlayer.Text) + 1);
                     MakeMusic();
